@@ -36,3 +36,11 @@ def filter_numbers(nums, ft_tp):
         return [num for num in nums if num % 2 != 0]
     elif ft_tp == 'even':
         return [num for num in nums if num % 2 == 0]
+    elif ft_tp == 'prime':
+        return [num for num in nums if is_prime_number(num)]
+
+
+def is_prime_number(num):
+    if len([i for i in range(1, num + 1) if num % i == 0]) == 2:
+        return True
+    return False
